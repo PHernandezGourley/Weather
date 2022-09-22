@@ -4,6 +4,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: "Playfair Display", serif;
+  color: rgb(255, 5, 151);
 }
 h1 {
   margin: 50px;
