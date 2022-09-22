@@ -3,4 +3,15 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  font-family: "Caveat", cursive;
+}
+h1 {
+  margin: 50px;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+}
+img,
+svg {
+  vertical-align: middle;
+  width: 50px;
 }
