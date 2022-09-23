@@ -12,6 +12,8 @@ function displaySearchWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
 }
 
 function search(city) {
@@ -19,7 +21,6 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displaySearchWeather);
 }
-
 function citySearch(event) {
   event.preventDefault();
   let city = document.querySelector("#cities").value;
