@@ -4,6 +4,7 @@ document.getElementById("date").innerHTML = d;
 
 //search engine for city
 function displaySearchWeather(response) {
+  let iconElement = document.querySelector("#current-icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -23,12 +24,14 @@ function displaySearchWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  document
-    .querySelector("#current-icon")
-    .setAttribute(
-      "src",
-      "http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
-    );
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute(
+    "alt",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   console.log(response.data);
 }
 
