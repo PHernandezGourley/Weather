@@ -62,52 +62,79 @@
         </div>
       <br />
       <h2>5 Day Forecast</h2>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Monday 8/15 <br> Sunny 🌞</h5>
-          <p class="card-text">
-            High 86<span>&#176; <br />
-            Low 66<span>&#176;
-          </p>
-        </div>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Tuesday 8/16 <br/>50% chance of Storms ⛈</h5>
-          <p class="card-text">
-            High 83<span>&#176;<br />
-            Low 67<span>&#176;
-          </p>
-        </div>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Wednesday 8/17<br> Sunny 🌞</h5>
-          <p class="card-text">
-            High 82<span>&#176;<br />
-            Low 64<span>&#176;
-          </p>
-        </div>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Thrusday 8/18 <br>Sunny🌞</h5>
-          <p class="card-text">
-            High 83<span>&#176;<br />
-            Low 65<span>&#176;
-          </p>
-        </div>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Friday 8/19 <br> Sunny🌞</h5>
-          <p class="card-text">
-            High 83<span>&#176; <br />
-            Low 65<span>&#176;
-          </p>
-        </div>
-      </div>
-     </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="day"></th>
+            <th scope="daily-icon"></th>            
+            <th scope="high">High</th>
+            <th scope="low">Low</th>            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="day1">Sun</th>
+            <td >
+              <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="cloudy"
+              class="float left"
+              id="day1-icon"/>
+            </td>           
+            <td><span id="d1temp-max"></span>75</td>
+            <td><span id="d1temp-min"></span>15</td>            
+          </tr>
+         <tr>
+            <th scope="day2">Mon</th>
+            <td >
+              <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="cloudy"
+              class="float left"
+              id="day2-icon"/>
+            </td>           
+            <td><span id="d2temp-max"></span>75</td>
+            <td><span id="d2temp-min"></span>15</td>            
+          </tr>
+          <tr>
+            <th scope="day3">Tue</th>
+            <td >
+              <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="cloudy"
+              class="float left"
+              id="day3-icon"/>
+            </td>           
+            <td><span id="d3temp-max"></span>75</td>
+            <td><span id="d3temp-min"></span>15</td>            
+          </tr>
+          <tr>
+            <th scope="day4">Wed</th>
+            <td >
+              <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="cloudy"
+              class="float left"
+              id="day4-icon"/>
+            </td>           
+            <td><span id="d4temp-max"></span>75</td>
+            <td><span id="d4temp-min"></span>15</td>            
+          </tr>
+          <tr>
+            <th scope="day5">Thu</th>
+            <td >
+              <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="cloudy"
+              class="float left"
+              id="day5-icon"/>
+            </td>           
+            <td><span id="d5temp-max"></span>75</td>
+            <td><span id="d5temp-min"></span>15</td>            
+          </tr>
+
+        </tbody>
+      </table>
     <script src="src/index.js"></script>
     <p class= openSource >
       <a href="https://github.com/PHernandezGourley/Weather">Open-Source code </a>  by Paulina Hernandez-Gourley
