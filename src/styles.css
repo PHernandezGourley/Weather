@@ -35,3 +35,11 @@ h4 {
   display: flex;
   justify-content: flex-end;
 }
+.todaysCurrentTemp {
+  font-weight: 600;
+}
+
+.openSource {
+  display: flex;
+  justify-content: center;
+}
