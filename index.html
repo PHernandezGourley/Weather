@@ -42,19 +42,29 @@
       </form>
       <br>
       <div class="card" style="width: auto;">
-        <div class="card-body">
+        <div class="todaysCurrentTemp">
           <h4 id="city"></h4>
           <p class="date" id="date"></p>
           <span id="temperature"></span><span>℉</span><br>
+          <span>It feels like: <span id="feels-like"></span><span>℉</span><br>
+          <span>Today's High:<span id="temp-max"></span><span>℉</span><br>
+          <span>Today's low:<span id="temp-low"></span><span>℉</span><br>
+
           <span> Humidity:<span id="humidity"></span>%</span><br>
           <span> Wind: <span id="wind"></span> km/h</span><br>
           <span id="description"></span>
-          <span id="current-weather-icon"></span>
+          <img 
+            
+            src="http://openweathermap.org/img/wn/04d@2x.png"
+            alt="Clear"
+            class="float-left"
+            id="current-icon"/>
+          
           </span>				      				      
         </div>
       </div>
       <br />
-      <h2>7 Day Forecast</h2>
+      <h2>5 Day Forecast</h2>
 
       <div class="card mb-3">
         <div class="card-body">
@@ -101,29 +111,10 @@
           </p>
         </div>
       </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Saturday 8/20 <br>Sunny🌞</h5>
-          <p class="card-text">
-            High 83<span>&#176; <br />
-            Low 66<span>&#176;
-          </p>
-        </div>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Sunday 8/21 <br>Sunny🌞</h5>
-          <p class="card-text">
-            High 84<span>&#176; <br />
-            Low 65<span>&#176;
-          </p>
-        </div>
-      </div>
-    </div>
-    
+     </div>
     <script src="src/index.js"></script>
-    <p>
-      <a href="https://github.com/PHernandezGourley/Weather">Open-Source code</a> by Paulina Hernandez-Gourley
+    <p class= openSource >
+      <a href="https://github.com/PHernandezGourley/Weather">Open-Source code </a>  by Paulina Hernandez-Gourley
     </p>
   </body>
 </html>
