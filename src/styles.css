@@ -6,6 +6,7 @@ body {
   font-family: "Playfair Display", serif;
   font-weight: 500;
   color: rgb(255, 5, 151);
+  text-align: center;
 }
 h1 {
   margin: 50px;
@@ -28,15 +29,10 @@ svg {
 .card {
   border-color: transparent;
   background-color: transparent;
-}
-h4 {
   display: flex;
   justify-content: center;
 }
-.date {
-  display: flex;
-  justify-content: center;
-}
+
 .todaysCurrentTemp {
   font-weight: 600;
 }
