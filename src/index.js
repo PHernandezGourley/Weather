@@ -88,4 +88,34 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      tr>
+            <th scope="day">${day}</th>
+            <td >
+              <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="cloudy"
+              class="float left"
+              id="day-icon"/>
+            </td>           
+            <td><span id="daytemp-max"></span>75</td>
+            <td><span id="daytemp-min"></span>15</td>            
+          </tr>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+
 search("Mexico City");
+displayForecast();
