@@ -93,12 +93,12 @@ function displayForecast() {
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = "";
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
-      tr>
+      <tr>
             <th scope="day">${day}</th>
             <td >
               <img
@@ -112,10 +112,11 @@ function displayForecast() {
           </tr>
   `;
   });
+}
 
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+forecastHTML = forecastHTML + "";
+forecastElement.innerHTML = forecastHTML;
+console.log(forecastHTML);
 
 search("Mexico City");
 displayForecast();
