@@ -32,9 +32,13 @@ function displaySearchWeather(response) {
     "alt",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  console.log(response.data);
 }
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ca5af28648d86b7925348bb9fb85cd3a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function search(city) {
   let apiKey = "ca5af28648d86b7925348bb9fb85cd3a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -89,7 +93,7 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
 function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#weather-forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
 
@@ -112,11 +116,9 @@ function displayForecast() {
           </tr>
   `;
   });
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
-
-forecastHTML = forecastHTML + "";
-forecastElement.innerHTML = forecastHTML;
-console.log(forecastHTML);
 
 search("Mexico City");
 displayForecast();
