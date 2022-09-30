@@ -1,8 +1,15 @@
 //date
 const d = new Date();
 document.getElementById("date").innerHTML = d;
+function formatDay(timestam) {
+  let date = new Date(timestam * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-//search engine for city
+  return days[day];
+}
+
+//current weather
 function displaySearchWeather(response) {
   celsiusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
@@ -34,6 +41,7 @@ function displaySearchWeather(response) {
   );
   getForecast(response.data.coord);
 }
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "ca5af28648d86b7925348bb9fb85cd3a";
@@ -94,28 +102,33 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
+//forecast
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#weather-forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-
   let forecastHTML = "";
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
       <tr>
-            <th scope="day">${day}</th>
+            <th scope="day">${formatDay(forecastDay.dt)}</th>
             <td >
               <img
-              src="http://openweathermap.org/img/wn/04d@2x.png"
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
               alt="cloudy"
               class="float left"
               id="day-icon"/>
             </td>           
-            <td><span id="daytemp-max"></span>75</td>
-            <td><span id="daytemp-min"></span>15</td>            
+            <td><span id="daytemp-max"></span>${forecastDay.temp.max}°</td>
+            <td><span id="daytemp-min"></span>${
+              forecastDay.temp.min
+            }°</td>            
           </tr>
   `;
   });
