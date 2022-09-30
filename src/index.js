@@ -110,10 +110,11 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = "";
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
       <tr>
             <th scope="day">${formatDay(forecastDay.dt)}</th>
             <td >
@@ -125,12 +126,15 @@ function displayForecast(response) {
               class="float left"
               id="day-icon"/>
             </td>           
-            <td><span id="daytemp-max"></span>${forecastDay.temp.max}°</td>
-            <td><span id="daytemp-min"></span>${
+            <td><span id="daytemp-max"></span>${Math.round(
+              forecastDay.temp.max
+            )}°</td>
+            <td><span id="daytemp-min"></span>${Math.round(
               forecastDay.temp.min
-            }°</td>            
+            )}°</td>            
           </tr>
   `;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
 }
